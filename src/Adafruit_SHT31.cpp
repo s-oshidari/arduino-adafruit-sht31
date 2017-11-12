@@ -51,6 +51,10 @@ void Adafruit_SHT31::heater(boolean h) {
 }
 
 
+boolean Adafruit_SHT31::update(void) {
+  return readTempHum();
+}
+
 float Adafruit_SHT31::readTemperature(void) {
 //  if (! readTempHum()) return NAN;
 
