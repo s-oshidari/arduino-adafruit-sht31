@@ -35,8 +35,8 @@
 
 class Adafruit_SHT31 {
  public:
-  Adafruit_SHT31();
-  boolean begin(uint8_t i2caddr = SHT31_DEFAULT_ADDR);
+  Adafruit_SHT31(uint8_t i2caddr = SHT31_DEFAULT_ADDR);
+  boolean readTempHum(void);
   float readTemperature(void);
   float readHumidity(void);
   uint16_t readStatus(void);
@@ -45,7 +45,6 @@ class Adafruit_SHT31 {
   uint8_t crc8(const uint8_t *data, int len);
 
  private:
-  boolean readTempHum(void);
   void writeCommand(uint16_t cmd);
 
   uint8_t _i2caddr;

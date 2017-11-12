@@ -16,16 +16,10 @@
 
 #include "Adafruit_SHT31.h"
 
-Adafruit_SHT31::Adafruit_SHT31() {
-}
-
-
-boolean Adafruit_SHT31::begin(uint8_t i2caddr) {
-  Wire.begin();
+Adafruit_SHT31::Adafruit_SHT31(uint8_t i2caddr) {
   _i2caddr = i2caddr;
+  Wire.begin();
   reset();
-  //return (readStatus() == 0x40);
-  return true;
 }
 
 uint16_t Adafruit_SHT31::readStatus(void) {
@@ -52,15 +46,11 @@ void Adafruit_SHT31::heater(boolean h) {
 
 
 float Adafruit_SHT31::readTemperature(void) {
-  if (! readTempHum()) return NAN;
-
   return temp;
 }
   
 
 float Adafruit_SHT31::readHumidity(void) {
-  if (! readTempHum()) return NAN;
-
   return humidity;
 }
 
