@@ -35,8 +35,7 @@
 
 class Adafruit_SHT31 {
  public:
-  Adafruit_SHT31();
-  boolean begin(uint8_t i2caddr = SHT31_DEFAULT_ADDR);
+  Adafruit_SHT31(uint8_t i2caddr = SHT31_DEFAULT_ADDR);
   boolean update(void);
   float readTemperature(void);
   float readHumidity(void);

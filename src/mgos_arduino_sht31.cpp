@@ -10,8 +10,8 @@
 
 #define MGOS_SHT31_RES_FAIL -12700
 
-Adafruit_SHT31 *mgos_sht31_create() {
-  return new Adafruit_SHT31();
+Adafruit_SHT31 *mgos_sht31_create(addr) {
+  return new Adafruit_SHT31(addr);
 }
 
 void mgos_sht31_close(Adafruit_SHT31 *sht31) {
@@ -19,11 +19,6 @@ void mgos_sht31_close(Adafruit_SHT31 *sht31) {
     delete sht31;
     sht31 = nullptr;
   }
-}
-
-void mgos_sht31_begin(Adafruit_SHT31 *sht31, int addr) {
-  if (sht31 == nullptr) return;
-  sht31->begin(addr);
 }
 
 int mgos_sht31_update(Adafruit_SHT31 *sht31) {

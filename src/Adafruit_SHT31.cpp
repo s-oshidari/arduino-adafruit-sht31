@@ -16,17 +16,12 @@
 
 #include "Adafruit_SHT31.h"
 
-Adafruit_SHT31::Adafruit_SHT31() {
-}
-
-
-boolean Adafruit_SHT31::begin(uint8_t i2caddr) {
+Adafruit_SHT31::Adafruit_SHT31(uint8_t i2caddr) {
   Wire.begin();
   _i2caddr = i2caddr;
   reset();
-  //return (readStatus() == 0x40);
-  return true;
 }
+
 
 uint16_t Adafruit_SHT31::readStatus(void) {
   writeCommand(SHT31_READSTATUS);
