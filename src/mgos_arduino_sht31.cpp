@@ -10,7 +10,7 @@
 
 #define MGOS_SHT31_RES_FAIL -12700
 
-Adafruit_SHT31 *mgos_sht31_create(addr) {
+Adafruit_SHT31 *mgos_sht31_create(int addr) {
   return new Adafruit_SHT31(addr);
 }
 
