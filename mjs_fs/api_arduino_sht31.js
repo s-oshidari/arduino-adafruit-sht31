@@ -4,6 +4,7 @@ let SHT31 = {
   _create: ffi('void *mgos_sht31_create()'),
   _cls: ffi('void mgos_sht31_close(void *)'),
   _bgn: ffi('void mgos_sht31_begin(void *, int)'),
+  _upd: ffi('void mgos_sht31_update(void *)'),
   _rt: ffi('int mgos_sht31_read_temperature(void *)'),
   _rh: ffi('int mgos_sht31_read_humidity(void *)'),
 
@@ -14,6 +15,10 @@ let SHT31 = {
 
     begin: function(addr) {
       return SHT31._bgn(this.sht, addr);
+    },
+
+    update: function() {
+      return SHT31._upd(this.sht);
     },
 
     readTemperature: function() {

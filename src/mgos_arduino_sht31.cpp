@@ -26,9 +26,12 @@ void mgos_sht31_begin(Adafruit_SHT31 *sht31, int addr) {
   sht31->begin(addr);
 }
 
+boolean mgos_sht31_update(Adafruit_SHT31 *sht31) {
+  sht31->update();
+}
+
 int mgos_sht31_read_temperature(Adafruit_SHT31 *sht31) {
   if (sht31 == nullptr) return MGOS_SHT31_RES_FAIL;
-  sht31->update();
   float res = sht31->readTemperature();
   return isnan(res) ? MGOS_SHT31_RES_FAIL : round(res * 100.0);
 }
