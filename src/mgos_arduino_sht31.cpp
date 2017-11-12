@@ -27,7 +27,7 @@ void mgos_sht31_begin(Adafruit_SHT31 *sht31, int addr) {
 }
 
 int mgos_sht31_update(Adafruit_SHT31 *sht31) {
-  sht31->update();
+  return sht31->update();
 }
 
 int mgos_sht31_read_temperature(Adafruit_SHT31 *sht31) {
