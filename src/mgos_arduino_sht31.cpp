@@ -26,7 +26,7 @@ void mgos_sht31_begin(Adafruit_SHT31 *sht31, int addr) {
   sht31->begin(addr);
 }
 
-boolean mgos_sht31_update(Adafruit_SHT31 *sht31) {
+int mgos_sht31_update(Adafruit_SHT31 *sht31) {
   sht31->update();
 }
 
