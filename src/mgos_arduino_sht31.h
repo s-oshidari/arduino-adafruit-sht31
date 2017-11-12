@@ -12,9 +12,9 @@ extern "C"
 {
 #endif
 
-Adafruit_SHT31 *mgos_sht31_create(int addr);
+Adafruit_SHT31 *mgos_sht31_create();
 void mgos_sht31_close(Adafruit_SHT31 *sht);
-void mgos_sht31_begin(Adafruit_SHT31 *sht);
+void mgos_sht31_begin(Adafruit_SHT31 *sht, int addr);
 int mgos_sht31_read_temperature(Adafruit_SHT31 *sht);
 int mgos_sht31_read_humidity(Adafruit_SHT31 *sht);
 

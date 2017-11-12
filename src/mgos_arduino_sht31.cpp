@@ -10,8 +10,8 @@
 
 #define MGOS_SHT31_RES_FAIL -12700
 
-Adafruit_SHT31 *mgos_sht31_create(int addr) {
-  return new Adafruit_SHT31(addr);
+Adafruit_SHT31 *mgos_sht31_create() {
+  return new Adafruit_SHT31();
 }
 
 void mgos_sht31_close(Adafruit_SHT31 *sht31) {
@@ -21,9 +21,9 @@ void mgos_sht31_close(Adafruit_SHT31 *sht31) {
   }
 }
 
-void mgos_sht31_begin(Adafruit_SHT31 *sht31) {
+void mgos_sht31_begin(Adafruit_SHT31 *sht31, int addr) {
   if (sht31 == nullptr) return;
-  sht31->begin();
+  sht31->begin(addr);
 }
 
 int mgos_sht31_read_temperature(Adafruit_SHT31 *sht31) {
