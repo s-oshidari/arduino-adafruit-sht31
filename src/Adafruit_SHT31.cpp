@@ -52,14 +52,14 @@ void Adafruit_SHT31::heater(boolean h) {
 
 
 float Adafruit_SHT31::readTemperature(void) {
-  if (! readTempHum()) return NAN;
+//  if (! readTempHum()) return NAN;
 
   return temp;
 }
   
 
 float Adafruit_SHT31::readHumidity(void) {
-  if (! readTempHum()) return NAN;
+//  if (! readTempHum()) return NAN;
 
   return humidity;
 }

@@ -43,9 +43,9 @@ class Adafruit_SHT31 {
   void reset(void);
   void heater(boolean);
   uint8_t crc8(const uint8_t *data, int len);
+  boolean readTempHum(void);
 
  private:
-  boolean readTempHum(void);
   void writeCommand(uint16_t cmd);
 
   uint8_t _i2caddr;
