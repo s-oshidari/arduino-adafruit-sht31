@@ -28,13 +28,6 @@ boolean Adafruit_SHT31::begin(uint8_t i2caddr) {
   return true;
 }
 
-boolean Adafruit_SHT31::begin(uint8_t pin_sda, uint8_t pin_scl, uint8_t i2caddr) {
-  Wire.begin(pin_sda, pin_scl);
-  _i2caddr = i2caddr;
-  reset();
-  return true;
-}
-
 uint16_t Adafruit_SHT31::readStatus(void) {
   writeCommand(SHT31_READSTATUS);
   Wire.requestFrom(_i2caddr, (uint8_t)3);

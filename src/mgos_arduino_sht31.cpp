@@ -10,8 +10,8 @@
 
 #define MGOS_SHT31_RES_FAIL -12700
 
-Adafruit_SHT31 *mgos_sht31_create(int pin_sda, int pin_scl, int addr) {
-  return new Adafruit_SHT31(pin_sda, pin_scl, addr);
+Adafruit_SHT31 *mgos_sht31_create(int addr) {
+  return new Adafruit_SHT31(addr);
 }
 
 void mgos_sht31_close(Adafruit_SHT31 *sht31) {

@@ -1,7 +1,7 @@
 load("api_math.js");
 
 let SHT31 = {
-  _create: ffi('void *mgos_sht31_create(int, int, int)'),
+  _create: ffi('void *mgos_sht31_create(int)'),
   _cls: ffi('void mgos_sht31_close(void *)'),
   _bgn: ffi('void mgos_sht31_begin(void *)'),
   _rt: ffi('int mgos_sht31_read_temperature(void *)'),
@@ -27,10 +27,10 @@ let SHT31 = {
     },
   },
 
-  create: function(pinSda, pinScl, addr) {
+  create: function(addr) {
     let obj = Object.create(SHT31._proto);
     // Return value: SHT31 handle opaque pointer.
-    obj.sht = SHT31._create(pinSda, pinScl, addr);
+    obj.sht = SHT31._create(addr);
     return obj;
   },
 };
